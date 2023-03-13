@@ -4,7 +4,38 @@
   
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+    //background-size: cover;
+  
   }
 
+  .card{
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .content-body{
+    width:100%;
+    height:100%;
+    top:0;
+    right:-100%;
+    position:absolute;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    color:bisque;
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    transition:2s;
+
+  }
+
+  .card-img{
+    height: 250px; 
+    width: 100%;
+  }
   
+  .card:hover .content-body{
+    right:0;
+  }

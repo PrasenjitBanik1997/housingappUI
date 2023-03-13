@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { ShareModule } from '../share/share.module';
+import { LoginComponent } from './login/login.component';
 
 
 
 
 @NgModule({
   declarations: [
-    LayoutComponent
+    LayoutComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

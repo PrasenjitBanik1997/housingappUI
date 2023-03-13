@@ -1,0 +1,24 @@
+<!-- <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <input type="email" placeholder="Enter your email" formControlName="email">
+    <span style="color:red;" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">Please enter a valid email id</span>
+    <input type="password" placeholder="Enter your password" formControlName="password">
+    <span style="color:red;" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">Please enter a password of minimum 6 charecters</span>
+    <button [disabled]="loginForm.invalid">login</button>
+
+
+</form> -->
+
+<mat-dialog-content>
+    <form [formGroup]="loginForm" (ngSubmit)="login()"> 
+        <input matInput type="email" placeholder="Enter your email" formControlName="email">
+        <mat-icon> email</mat-icon>
+        <br>
+        <span style="color:red;" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">Please enter a valid email id</span>
+        <input matInput type="password" placeholder="Enter your password" formControlName="password">
+        <button (click)="password()">{{show ? 'Show' : 'Hide'}}</button>
+        <br>
+        <span style="color:red;" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">Please enter a password of minimum 6 charecters</span>
+        <br>
+        <button class="primary" [disabled]="loginForm.invalid">login</button>
+    </form>
+</mat-dialog-content>
