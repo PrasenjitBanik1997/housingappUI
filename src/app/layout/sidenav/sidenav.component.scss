@@ -1,0 +1,18 @@
+.ptag{
+  display: inline-block;
+  margin-left: 15px;
+  vertical-align:middle;
+}
+mat-list-item{
+  position: sticky;
+  
+}
+a[tabindex]:focus{
+  border-left: 5px rgb(120, 8, 224)  solid !important;
+  background-color: rgb(192, 192, 217) !important;
+}
+a[tabindex]:active{
+  border-left: 5px rgb(120, 8, 224)  solid !important;
+  background-color: rgb(192, 192, 217) !important;
+}
+  

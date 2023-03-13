@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-12">
+        <button mat-raised-button class="float-end" color="primary">Book Visit</button>
+    </div>
+</div>
+
+<div class="mt-2">
+    <div class="row ">
+        <div class="col-6">
+            <mat-card class="example-card ">
+                <img src="{{visitedSiteDetails.cover_image_url}}" class=" border border-3 border-primary" alt="">
+            </mat-card>
+        </div>
+        <div class="col-6">
+            <mat-card class="example-card border border-3 border-primary">
+                <mat-card-header>
+                    <mat-card-title>Project Overview</mat-card-title>
+                    <mat-card-subtitle>{{visitedSiteDetails.project_name}}</mat-card-subtitle>
+                    <mat-card-subtitle class="location"><mat-icon>
+                            location_on</mat-icon>{{visitedSiteDetails.location}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                        {{visitedSiteDetails.project_overview}}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <!-- <mat-card class=" mt-4"> -->
+
+    <div class="row mt-2 p-4">
+        <!-- <div class="col-1"></div> -->
+        <div class="col-3 border-end border-3 border-dark">
+            <div class="row">
+                <div class="col-3"> <img src="../../../../assets/icons/icons8-calendar-94.png" alt=""
+                        style="width:50px;height: 50px;"></div>
+                <div class="col-9">
+                    <div class="row fw-bold">{{ visitedSiteDetails.project_start_date | date:'MMM, y'
+                        }} {{visitedSiteDetails.project_end_date|
+                        date:'MMM, y'}}
+                    </div>
+                    <div class="row">{{visitedSiteDetails.status}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-end border-3 border-dark">
+            <div class="row">
+                <div class="col-3"> <img src="../../../../assets/icons/flats.png" alt=""
+                        style="width:50px;height: 50px;"></div>
+                <div class="col-9">
+                    <div class="row fw-bold">G + {{visitedSiteDetails.no_of_towers}}</div>
+                    <div class="row">No of Towers & Elevation</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-end border-3 border-dark">
+            <div class="row">
+                <div class="col-4"><img src="../../../../assets/icons/icons8-city-buildings-100.png" alt=""
+                        style="width:50px;height: 50px;"></div>
+                <div class="col-8">
+                    <div class="row fw-bold">{{visitedSiteDetails.BHK_configuration}} BHK</div>
+                    <div class="row">Configuration</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-end border-3 border-dark">
+            <div class="row">
+                <div class="col-4"><img src="../../../../assets/icons/area.png" alt="" style="width:50px;height: 50px;">
+                </div>
+                <div class="col-8">
+                    <div class="row fw-bold">{{visitedSiteDetails.project_area}} Acres</div>
+                    <div class="row">Project Area</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 ">
+            <div class="row">
+                <div class="col-4"> <img src="../../../../assets/icons/school-materials.png" alt=""
+                        style="width:50px;height: 50px;"></div>
+                <div class="col-8">
+                    <div class="row fw-bold">{{visitedSiteDetails.size_start_sqft}}-{{visitedSiteDetails.size_upto_sqft}} Sq.Ft
+                    </div>
+                    <div class="row">BU Area</div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-1"></div> -->
+    </div>
+    <!-- </mat-card> -->
+</div>

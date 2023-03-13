@@ -34,6 +34,7 @@ $Dark-theme: mat.define-dark-theme((
 .light-theme{
     @include mat.all-component-themes($Light-theme);
     background: mat.get-color-from-palette($Light-theme-primary,50);
+    height:100%;overflow-x: hidden; 
 }
 
 .dark-theme{
@@ -41,8 +42,15 @@ $Dark-theme: mat.define-dark-theme((
     @include mat.core-theme($Dark-theme);
     background-color:rgb(10, 9, 10);
     color: white;
+    .card{background-color: rgb(44, 131, 98);color: white !important;}
+    height:100%;overflow-x: hidden; 
+}
+
+.cdk-global-scrollblock{
+  overflow-y: hidden;
+  top:0 !important;
 }
 
 
-html, body { height: 100%;overflow-x: hidden; }
+html, body { height:100%;overflow-x: hidden; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

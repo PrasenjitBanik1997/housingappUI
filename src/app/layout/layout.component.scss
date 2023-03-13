@@ -1,12 +1,27 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 
-  .app-toolbar {
-    position: sticky;
-    position: -webkit-sticky; /* For macOS/iOS Safari */
-    top: 0; /* Sets the sticky toolbar to be on top */
-    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
-  }
+.header-component {
+  position: sticky;
+  position: -webkit-sticky;
+  /* For macOS/iOS Safari */
+  top: 0;
+  /* Sets the sticky toolbar to be on top */
+  z-index: 1000;
+  /* Ensure that your app's content doesn't overlap the toolbar */
+}
 
-  
+.example-icon {
+  color: black !important;
+}
+
+.content-container {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 10px 20px 25px 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+

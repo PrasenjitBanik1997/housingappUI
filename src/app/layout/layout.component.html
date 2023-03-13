@@ -1,24 +1,42 @@
-<mat-toolbar color="primary" class="app-toolbar">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+<div class="header-component">
+  <mat-toolbar color="primary" class="app-toolbar">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleMenu()">
       <mat-icon>menu</mat-icon>
     </button>
     <span>My App</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" title="Login" aria-label="Example icon-button">
-      <mat-icon>lock_open</mat-icon>
+    <button mat-raised-button class="example-icon favorite-icon" color="accent" title="Login"
+      aria-label="Example icon-button" (click)="openLoginDialog()">
+      Login<mat-icon>lock_open</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button">
-      <mat-icon>exit_to_app</mat-icon>
+    <button mat-raised-button [matMenuTriggerFor]="menu" color="accent" aria-label="Example icon-button with a menu"
+      class="example-icon  ms-2">
+      Theme<mat-icon>color_lens</mat-icon>
     </button>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="example-icon">
-        <mat-icon>color_lens</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <span mat-menu-item *ngFor="let item of themeArray" (click)="getTheme(item.value)">
-          <mat-icon>{{item.icon}}</mat-icon>
-          <span>{{item.key}}</span>
-        </span>
-      </mat-menu>
+    <button mat-raised-button class="example-icon favorite-icon ms-2" color="warn" aria-label="Example icon-button">
+      Logout <mat-icon>exit_to_app</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <span mat-menu-item *ngFor="let item of themeArray" (click)="getTheme(item.value)">
+        <mat-icon>{{item.icon}}</mat-icon>
+        <span>{{item.key}}</span>
+      </span>
+    </mat-menu>
   </mat-toolbar>
+</div>
+  <mat-sidenav-container autosize>
+    <mat-sidenav style="position: fixed;padding-top: 70px;" #sidenav mode="side" opened="true" [ngStyle]="{'width':!isExpanded?'60px':'250px'}" >
+      <app-sidenav [isExpanded]="isExpanded"></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content >
+      <div class="content-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+<!-- <div style="height: 100%;top: 0;">
   <router-outlet></router-outlet>
+</div> -->
