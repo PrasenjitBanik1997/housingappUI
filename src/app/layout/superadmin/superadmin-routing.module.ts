@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllSitesComponent } from './all-sites/all-sites.component';
-import { SuperAdminComponent } from './super-admin.component';
+import { SuperadminComponent } from './superadmin.component';
 
 const routes: Routes = [
   {
     path: '',
-    component:SuperAdminComponent,
+    component:SuperadminComponent,
     children:[
       {
         path: '',
@@ -26,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SuperAdminRoutingModule { }
+export class SuperadminRoutingModule { }
