@@ -1,14 +1,28 @@
 <div class="header-component">
-  <mat-toolbar color="primary" class="app-toolbar">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleMenu()">
+  <mat-toolbar color="primary" >
+    <button mat-icon-button class="example-icon" style="margin-right: 10px;" aria-label="Example icon-button with menu icon" (click)="toggleMenu()">
       <mat-icon>menu</mat-icon>
     </button>
     <span>My App</span>
     <span class="example-spacer"></span>
-    <button mat-raised-button class="example-icon favorite-icon" color="accent" title="Login"
-      aria-label="Example icon-button" (click)="openLoginDialog()">
-      Login<mat-icon>lock_open</mat-icon>
+
+    <!-- <button mat-raised-button class="example-icon favorite-icon" color="accent" title="Login"
+      aria-label="Example icon-button" (click)="goToPage('login')">
+      Customer Portal<mat-icon>lock_open</mat-icon>
+    </button> -->
+    <button mat-raised-button class="example-icon favorite-icon" color="accent" title="Admin Login"
+      aria-label="Example icon-button" (click)="goToPage('admin')">
+      Admin Portal<mat-icon>lock_open</mat-icon>
     </button>
+
+    <button mat-raised-button class="example-icon favorite-icon" color="accent" title="Customer Login"
+      aria-label="Example icon-button" (click)="goToPage('customer')">
+      Customer Portal<mat-icon>lock_open</mat-icon>
+   </button>
+  
+    <!-- <a routerLink="/CustomerLogin">Customer</a>
+
+    <a routerLink="/AdminLogin">Admin</a> -->
     <button mat-raised-button [matMenuTriggerFor]="menu" color="accent" aria-label="Example icon-button with a menu"
       class="example-icon  ms-2">
       Theme<mat-icon>color_lens</mat-icon>
@@ -26,7 +40,11 @@
     </mat-menu>
   </mat-toolbar>
 </div>
-  <mat-sidenav-container autosize>
+<div style="padding: 10px;">
+  <router-outlet></router-outlet>
+</div>
+
+  <!-- <mat-sidenav-container autosize>
     <mat-sidenav style="position: fixed;padding-top: 70px;" #sidenav mode="side" opened="true" [ngStyle]="{'width':!isExpanded?'60px':'250px'}" >
       <app-sidenav [isExpanded]="isExpanded"></app-sidenav>
     </mat-sidenav>
@@ -35,7 +53,8 @@
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
-  </mat-sidenav-container>
+  </mat-sidenav-container> -->
+  
 
 <!-- <div style="height: 100%;top: 0;">
   <router-outlet></router-outlet>

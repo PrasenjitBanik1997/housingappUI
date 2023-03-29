@@ -13,3 +13,14 @@
   .example-full-width {
     width: 100%;
   }
+
+.size{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.center{
+  text-align: center;
+}

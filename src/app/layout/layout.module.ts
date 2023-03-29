@@ -7,7 +7,7 @@ import { ShareModule } from '../share/share.module';
 import { LoginComponent } from './login/login.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { RegistrationComponent } from './registration/registration.component';
-
+import { SiteEnquiryComponent } from './dialogsComponent/site-enquiry/site-enquiry.component';
 
 
 
@@ -16,12 +16,18 @@ import { RegistrationComponent } from './registration/registration.component';
     LayoutComponent,
     LoginComponent,
     SidenavComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SiteEnquiryComponent
   ],
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    ShareModule
+    ShareModule,
+  ],
+  exports:[
+    // SidenavComponent
   ]
 })
-export class LayoutModule { }
+export class LayoutModule {
+
+ }

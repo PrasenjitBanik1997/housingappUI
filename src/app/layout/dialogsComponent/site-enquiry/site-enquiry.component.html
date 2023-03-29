@@ -1,0 +1,50 @@
+<!-- <p>site-enquiry works!</p> -->
+<ng-container>
+    <mat-card class="mat-dialog-modal-header-card" style="height:60px;">
+        <mat-card-title class="mat-card-title ">
+            <h4>Enquiry</h4>
+        </mat-card-title>
+    </mat-card><br>
+    <mat-dialog-content>
+        <!-- <mat-error *ngIf="isLoggedin==false">To visit, you must have login with us. Please login</mat-error> -->
+        <form [formGroup]="enquiryForm" class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input type="name" matInput placeholder="Please enter your name"  formControlName="name" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Please enter your email"  formControlName="email_id" required>
+                <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Mobile Number</mat-label>
+                <span matPrefix>+91 &nbsp;</span>
+                <input type="tel" matInput placeholder="Enter your mobile number"  formControlName="phone_no" required>
+                <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Budget</mat-label>
+                <input type="text" matInput placeholder="Please enter your budget"  formControlName="budget" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>BHK</mat-label>
+                    <mat-select formControlName="BHK" required>
+                      <mat-option  *ngFor="let bhk of bhkDetails" [value]="bhk" >{{bhk}}</mat-option>
+                    </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Messege</mat-label>
+                <!-- <mat-icon matSuffix>feedback</mat-icon> -->
+                <textarea matInput placeholder="Enter your Messege" formControlName="query"></textarea>
+            </mat-form-field>
+
+        </form>
+
+    </mat-dialog-content>
+    <mat-dialog-actions class="float-end p-4">
+        <button class="primary" mat-button (click)="closeModal()">Cancel</button>
+        <button class="primary" mat-raised-button color="primary" [disabled]="enquiryForm.invalid" (click)="userEnquiry()">Submit</button>
+    </mat-dialog-actions>
+</ng-container>

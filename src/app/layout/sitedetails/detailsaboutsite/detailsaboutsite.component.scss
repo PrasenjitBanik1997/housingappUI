@@ -14,11 +14,11 @@ mat-card-content p {
 
 .example-card {
     max-width: 100%;
-    height: 490px;
+    height: 350px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
     img {
-        height: 490px;
+        height: 350px;
         // border: 5px skyblue solid;
     }
 }
@@ -34,3 +34,7 @@ mat-card-content p {
   .dto{
     border-right: 10px solid black;
   }
+
+.height{
+    overflow-y: hidden !important;
+}

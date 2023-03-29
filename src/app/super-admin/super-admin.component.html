@@ -1,0 +1,11 @@
+ <mat-sidenav-container autosize>
+    <mat-sidenav style="position: fixed;padding-top: 70px;" #sidenav mode="side" opened="true" 
+    [ngStyle]="{'width':!isExpanded?'60px':'250px'}" >
+      <app-sidenav [isExpanded]="isExpanded"></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content >
+      <div class="content-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

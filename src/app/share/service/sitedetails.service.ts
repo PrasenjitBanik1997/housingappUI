@@ -13,4 +13,5 @@ export class SitedetailsService {
     return this.http.get(`${environment.rootApiUrl}/api/getproject`)
   }
 
+  
 }

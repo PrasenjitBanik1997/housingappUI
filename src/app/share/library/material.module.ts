@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -36,6 +36,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatSliderModule } from '@angular/material/slider';
+import { NgxSpinnerModule } from "ngx-spinner";
+// import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 
 const materialModules = [
   MatGridListModule,
@@ -73,7 +76,10 @@ const materialModules = [
     OverlayModule,
     ScrollingModule,
     MatSliderModule,
-    MatSortModule
+    MatSortModule,
+    NgxSpinnerModule,
+    // BrowserAnimationsModule
+    
 ];
 
 
@@ -81,10 +87,14 @@ const materialModules = [
   declarations: [],
   imports: [
     CommonModule,
-    ...materialModules
+    ...materialModules,
+     
   ],
   exports: [
-    ...materialModules
-  ]
+    ...materialModules,
+    
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MaterialModule { }
+

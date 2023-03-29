@@ -1,19 +1,19 @@
-<ng-container>
+<!-- <ng-container>
     <mat-card class="mat-dialog-modal-header-card" style="height:60px;">
         <mat-card-title class="mat-card-title ">
-            <h4>Login</h4>
+            <h4>login</h4>
         </mat-card-title>
     </mat-card><br>
     <mat-dialog-content>
-        <form class="example-form">
+        <form  [formGroup]="loginForm" class="example-form" >
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput placeholder="Please enter your email">
+                <input type="email" matInput placeholder="Please enter your email" formControlName="email">
                 <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Password</mat-label>
-                <input [type]="passwordType" matInput placeholder="Please enter your password">
+                <input [type]="passwordType" matInput placeholder="Please enter your password" formControlName="password">
                 <mat-icon matSuffix *ngIf="isVisiable==false" (click)="showPassword()">visibility</mat-icon>
                 <mat-icon matSuffix *ngIf="isVisiable==true" (click)="hidePassword()">visibility_off</mat-icon>
             </mat-form-field>
@@ -22,6 +22,34 @@
     </mat-dialog-content>
     <mat-dialog-actions class="float-end p-4">
         <button class="primary" mat-button (click)="closeModal(false)">Cancel</button>
-        <button class="primary" mat-raised-button color="primary" (click)="userLogin()">Login</button>
+        <button class="primary" mat-raised-button color="primary" (click)="userLogin()" [disabled]="loginForm.invalid">Login</button>
     </mat-dialog-actions>
 </ng-container>
+<router-outlet></router-outlet> -->
+
+<mat-card class="size">
+    <mat-card-header>
+        <mat-card class="example-full-width p-3">
+        <mat-card-title *ngIf="selectedPage=='admin'" class="center"> Welcome to Admin Login</mat-card-title>
+        <mat-card-title *ngIf="selectedPage=='customer'" class="center">Welcome to Coustomer Login</mat-card-title>
+    </mat-card>
+    </mat-card-header>
+    <mat-card-content class="mt-2">
+        <form [formGroup]="loginForm" class="example-form center">
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Please enter your email" formControlName="email">
+                <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input [type]="passwordType" matInput placeholder="Please enter your password"
+                    formControlName="password">
+                <mat-icon matSuffix *ngIf="isVisiable==false" (click)="showPassword()">visibility</mat-icon>
+                <mat-icon matSuffix *ngIf="isVisiable==true" (click)="hidePassword()">visibility_off</mat-icon>
+            </mat-form-field>
+            <button class="primary" mat-raised-button color="primary" (click)="userLogin()"
+            [disabled]="loginForm.invalid">Login</button>
+        </form>
+    </mat-card-content>
+</mat-card>

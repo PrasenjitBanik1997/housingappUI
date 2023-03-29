@@ -13,7 +13,8 @@ import { DetailsaboutsiteComponent } from './detailsaboutsite/detailsaboutsite.c
   imports: [
     CommonModule,
     SitedetailsRoutingModule,
-    ShareModule
+    ShareModule,
+    
   ]
 })
 export class SitedetailsModule { }

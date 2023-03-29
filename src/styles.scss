@@ -52,5 +52,6 @@ $Dark-theme: mat.define-dark-theme((
 }
 
 
-html, body { height:100%;overflow-x: hidden; }
+
+html, body { height:100%;overflow-x: hidden;overflow-y: auto;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

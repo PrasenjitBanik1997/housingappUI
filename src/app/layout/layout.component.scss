@@ -14,14 +14,15 @@
 
 .example-icon {
   color: black !important;
+  margin: 6px;
 }
 
 .content-container {
-  min-height: 100vh;
+  min-height: 90vh;
   box-sizing: border-box;
-  padding: 10px 20px 25px 20px;
+  padding: 10px 20px 0px 20px;
   overflow-x: hidden;
-  overflow-y: auto;
+  // overflow-y: auto;
 }
 
 
