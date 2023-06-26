@@ -9,6 +9,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SiteEnquiryComponent } from './dialogsComponent/site-enquiry/site-enquiry.component';
 import { SuperadminComponent } from './superadmin/superadmin.component';
+import { OwnerComponent } from './owner/owner.component';
 
 
 
@@ -19,7 +20,8 @@ import { SuperadminComponent } from './superadmin/superadmin.component';
     SidenavComponent,
     RegistrationComponent,
     SiteEnquiryComponent,
-    SuperadminComponent
+    SuperadminComponent,
+    OwnerComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,7 @@ import { SuperadminComponent } from './superadmin/superadmin.component';
     ShareModule,
   ],
   exports:[
-    // SidenavComponent
+    SidenavComponent
   ]
 })
 export class LayoutModule {

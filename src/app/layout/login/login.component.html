@@ -48,7 +48,9 @@
                 <mat-icon matSuffix *ngIf="isVisiable==false" (click)="showPassword()">visibility</mat-icon>
                 <mat-icon matSuffix *ngIf="isVisiable==true" (click)="hidePassword()">visibility_off</mat-icon>
             </mat-form-field>
-            <button class="primary" mat-raised-button color="primary" (click)="userLogin()"
+            <button *ngIf="selectedPage=='admin'" class="primary" mat-raised-button color="primary" (click)="adminLogin()"
+            [disabled]="loginForm.invalid">Login</button>
+            <button *ngIf="selectedPage=='customer'" class="primary" mat-raised-button color="primary" (click)="ownerLogin()"
             [disabled]="loginForm.invalid">Login</button>
         </form>
     </mat-card-content>

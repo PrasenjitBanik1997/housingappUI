@@ -11,8 +11,8 @@ export class SidenavComponent implements OnInit{
   // @Output() toggleMenu = new EventEmitter();
 
   public routeLinks = [
-    { link: "about", name: "About", icon: "dashboard" },
-    { link: "locations", name: "Locations", icon: "account_balance" },
+    { link: "about", name: "All Sites", icon: "dashboard",routingPath:'/home/superAdmin/allSites'},
+    { link: "locations", name: "All User", icon: "account_balance",routingPath:'/home/superAdmin/allUsers'},
   ];
 
   ngOnInit(){

@@ -1,7 +1,7 @@
 <div class="header-component">
   <mat-toolbar color="primary" >
     <button mat-icon-button class="example-icon" style="margin-right: 10px;" aria-label="Example icon-button with menu icon" (click)="toggleMenu()">
-      <mat-icon>menu</mat-icon>
+      <mat-icon *ngIf="myApp">menu</mat-icon>
     </button>
     <span>My App</span>
     <span class="example-spacer"></span>
@@ -40,7 +40,7 @@
     </mat-menu>
   </mat-toolbar>
 </div>
-<div style="padding: 10px;">
+<div>
   <router-outlet></router-outlet>
 </div>
 

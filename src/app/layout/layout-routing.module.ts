@@ -32,7 +32,13 @@ const routes: Routes = [
         path:'superAdmin',
         // component:SuperAdminComponent
         loadChildren: () => import('./superadmin/superadmin.module').then(m => m.SuperadminModule)
-      }
+      },
+
+      {
+      path: 'owner',
+      loadChildren: () => import('./owner/owner.module').then(m => m.OwnerModule)
+      },
+
      
     ]
   }

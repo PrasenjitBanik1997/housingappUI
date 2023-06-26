@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { SiteEnquiryComponent } from './dialogsComponent/site-enquiry/site-enquiry.component';
 import { LoginComponent } from './login/login.component';
 import { Router } from '@angular/router';
+import { LoginRegistrationService } from '../share/service/login-registration.service';
 
 @Component({
   selector: 'app-layout',
@@ -13,9 +14,12 @@ export class LayoutComponent implements OnInit {
 
   themeArray=[{key:'Light Theme',value:'light-theme',icon:'brightness_5'},{key:'Dark Theme',value:'dark-theme',icon:'brightness_2'}]
   themeClass!: string;
-  // public isExpanded = false;
+  public isExpanded = false;
+   public myApp:boolean = false; 
+  
 
-  constructor(private router:Router){
+  constructor(private router:Router,
+    private login:LoginRegistrationService){
 
   }
 
@@ -24,6 +28,11 @@ export class LayoutComponent implements OnInit {
     this.themeClass = "light-theme";
     const body=document.getElementsByTagName('body')[0];
     body.classList.add(this.themeClass)
+
+    this.login.enableMenuButton.subscribe(res=>{
+      this.myApp= res
+    }
+    )
   }
 
   getTheme(event:any){
@@ -52,7 +61,6 @@ export class LayoutComponent implements OnInit {
   
 
   public toggleMenu() {
-    console.log('hii')
-    // this.isExpanded = !this.isExpanded;
+    this.login.myAppSubject.next(this.isExpanded=!this.isExpanded)
   }
 }

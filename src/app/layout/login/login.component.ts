@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -29,6 +29,14 @@ export class LoginComponent implements OnChanges, OnInit ,AfterViewInit{
     password: "Abcd@1234"
   }
 
+  
+  ownerLoginDetails={
+    email: "abc@gmail.com",
+    password: "Abcd@1234"
+  }
+
+ 
+
   constructor(
     private loginService: LoginRegistrationService,
     private route: ActivatedRoute,
@@ -43,6 +51,7 @@ export class LoginComponent implements OnChanges, OnInit ,AfterViewInit{
   ngOnInit() {
     // this.selectedPage = this.route.snapshot.paramMap.get("data") as string
     console.log(this.selectedPage)
+
   }
 
   ngOnChanges() {
@@ -53,7 +62,7 @@ export class LoginComponent implements OnChanges, OnInit ,AfterViewInit{
     this.selectedPage = this.route.snapshot.paramMap.get("data") as string
   }
 
-  userLogin() {
+  adminLogin() {
 
     // console.log(this.loginForm.value)
     // this.loginService.userLogin(this.loginForm.value).subscribe({
@@ -66,12 +75,26 @@ export class LoginComponent implements OnChanges, OnInit ,AfterViewInit{
     // })
     if(this.loginForm.value.email==this.adminLoginDetails.email && this.loginForm.value.password==this.adminLoginDetails.password){
       this.router.navigate(['/home/superAdmin'])
+      this.loginService.enableMenuButton.next(true);
     }
     else{
       console.log("Enter valid email id")
     }
 
+
   }
+
+  ownerLogin(){
+    if(this.loginForm.value.email==this.ownerLoginDetails.email && this.loginForm.value.password==this.ownerLoginDetails.password){
+      this.router.navigate(['/home/owner'])
+      this.loginService.enableMenuButton.next(true);
+    }
+    else{
+      console.log("Enter valid email id")
+    }
+  }
+
+
   // closeModal(bool: boolean) {
   //   this.dialogRef.close()
   // }

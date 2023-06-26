@@ -1,6 +1,6 @@
 <section>
   <mat-list *ngFor="let route of routeLinks ,let i=index" >
-    <a mat-list-item tabindex="{{i}}">
+    <a mat-list-item tabindex="{{i}}" routerLink="{{route.routingPath}}">
       <mat-icon mat-list-icon>{{ route.icon }}</mat-icon>
       <p matLine *ngIf="isExpanded" class="ptag">{{ route.name }}</p>
     </a>

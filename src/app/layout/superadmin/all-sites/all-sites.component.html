@@ -1,1 +1,88 @@
-<p>all-sites works!</p>
+<!-- <button class="primary" mat-raised-button color="primary" (click)="openDialog()">Add Sites</button>
+
+<div class="example-container mat-elevation-z8 tableLayout">
+<table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="project_name">
+      <th mat-header-cell *matHeaderCellDef>Project Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.project_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>Location </th>
+      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price_starting_from">
+      <th mat-header-cell *matHeaderCellDef>Price Starting From</th>
+      <td mat-cell *matCellDef="let element"> {{element.price_starting_from}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="no_of_floor">
+      <th mat-header-cell *matHeaderCellDef>No. of floors</th>
+      <td mat-cell *matCellDef="let element"> {{element.no_of_floor}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="project_area">
+      <th mat-header-cell *matHeaderCellDef>Project Area</th>
+      <td mat-cell *matCellDef="let element"> {{element.project_area}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator
+  #paginator
+  [pageSizeOptions]="[2, 4, 6, 10]"
+  showFirstLastButtons
+></mat-paginator>
+</div>
+
+   -->
+
+
+   <div class="tableLayout mat-elevation-z8">
+    <div class="float-end mb-2">
+      <button class="primary" mat-raised-button color="primary" (click)="openDialog()">Add Sites</button>
+    </div>
+  
+    <table mat-table [dataSource]="dataSource">
+  
+      <ng-container matColumnDef="project_name">
+        <th mat-header-cell *matHeaderCellDef> Project Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.project_name}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef>Location</th>
+        <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="price_starting_from">
+        <th mat-header-cell *matHeaderCellDef>Price Starting From</th>
+        <td mat-cell *matCellDef="let element"> {{element.price_starting_from}} </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="no_of_floor">
+        <th mat-header-cell *matHeaderCellDef>No. of floors</th>
+        <td mat-cell *matCellDef="let element"> {{element.no_of_floor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="project_area">
+        <th mat-header-cell *matHeaderCellDef>Project Area</th>
+        <td mat-cell *matCellDef="let element"> {{element.project_area}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <ng-container>
+      <mat-paginator [pageSizeOptions]="[2, 4, 5]" showFirstLastButtons>
+      </mat-paginator>
+    </ng-container>
+  </div>

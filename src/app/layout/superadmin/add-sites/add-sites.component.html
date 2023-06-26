@@ -1,0 +1,41 @@
+<ng-container>
+    <mat-card class="mat-dialog-modal-header-card" style="height:60px;">
+        <mat-card-title class="mat-card-title ">
+            <h4>Add New Sites Here!</h4>
+        </mat-card-title>
+    </mat-card><br>
+    <mat-dialog-content>
+        <form  [formGroup]="addSitesForm" class="example-form" >
+            <mat-form-field class="example-full-width">
+                <mat-label>Project Name</mat-label>
+                <input type="name" matInput placeholder="Please enter your project name" formControlName="project_name">
+                <!-- <mat-icon matSuffix>email</mat-icon> -->
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Location</mat-label>
+                <input type="name" matInput placeholder="Please enter your project's location" formControlName="location">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Price Starting From</mat-label>
+                <input type="name" matInput placeholder="Please enter your base price" formControlName="price_starting_from">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>No of Floor</mat-label>
+                <input type="name" matInput placeholder="Please enter the number of floors" formControlName="no_of_floor">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Project Area</mat-label>
+                <input type="name" matInput placeholder="Please enter your project's area" formControlName="project_area">
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions class="float-end p-4">
+        <button class="primary" mat-raised-button color="primary" (click)="addSites()">Add</button>
+        <button class="primary" mat-raised-button color="primary" (click)="closeModal()">Close</button>
+    </mat-dialog-actions>
+</ng-container>
+
+

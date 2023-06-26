@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 
@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment';
 export class LoginRegistrationService {
 
   constructor(private http: HttpClient) { }
+   
+  myAppSubject = new BehaviorSubject<boolean>(false);
+  enableMenuButton= new BehaviorSubject<boolean>(false);
 
   token= JSON.parse(sessionStorage.getItem('currentUser') as string) ;
 
